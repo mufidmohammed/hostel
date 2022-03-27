@@ -41,9 +41,9 @@
                         <td>{{ $student->phone }}</td>
                         <td>{{ $student->level }}</td>
                         <td>{{ $student->age }}</td>
-                        <td>{{ $student->room->room_number }}</td>
+                        <td>{{ $student->room?->room_number }}</td>
                         <td>{{ $student->start_date }}</td>
-                        <td>{{ $student->course->name }}</td>
+                        <td>{{ $student->course?->name }}</td>
                         <td>{{ $student->fees }}</td>
                         <td>{{ $student->paid ? 'Paid' : 'Unpaid' }}</td>
                         <td>{{ $student->checked_in ? 'Yes' : 'No' }}</td>

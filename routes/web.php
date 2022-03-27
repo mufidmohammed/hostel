@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\DashBoardController;
 
 /*
@@ -34,5 +35,13 @@ Route::post('/students/{id}', [StudentController::class, 'update'])->name('stude
 Route::get('/students/{id}/destroy', [StudentController::class, 'destroy'])->name('students.destroy');
 
 Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
+Route::get('/rooms/create', [RoomController::class, 'create'])->name('rooms.create');
+Route::post('/rooms', [RoomController::class, 'store'])->name('rooms.store');
+Route::get('/rooms/{room}/edit', [RoomController::class, 'edit'])->name('rooms.edit');
+Route::post('/rooms/{room}', [RoomController::class, 'update'])->name('rooms.update');
+Route::get('/rooms/{room}/destroy', [RoomController::class, 'destroy'])->name('rooms.destroy');
+
+Route::get('/change-password', [PasswordController::class, 'create'])->name('password.change');
+Route::post('/change-password', [PasswordController::class, 'store'])->name('password.store');
 
 require __DIR__.'/auth.php';
